@@ -173,4 +173,4 @@ src
 ```
 **8. *(Optional)* Add the setShowModal(false) to your onSubmit functions, inside the forms, if they don't redirect you to a new page or something.**
 
-[Back to top ⬆]()
+[Back to top ⬆](https://github.com/whitnessme/context-modal-instructions#how-to-make-easy-modals-using-react-context)

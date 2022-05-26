@@ -1,9 +1,19 @@
 # How to make Modals Using React Context
 
-> More concise instructions, based on aA Open's *Week 15 > Redux and authentication > Start Authenticate Me Part 2 Frontend* bonus instructions
-### Creating the Context & Setup
-1. Create `context` folder in `src` folder
-2. Within the `context` folder, make a `Modal.js` containing: 
+> More concise instructions, based on aA Open's *Week 15 > Redux and authentication > Start Authenticate Me Part 2 Frontend bonus instructions*
+
+----
+
+## Creating the Context & Setup
+**1. Create `context` folder in `src` folder**
+```
+src
+├── components
+├── context
+├── images
+└── store
+```
+**2. Within the `context` folder, make a `Modal.js` containing:**
 ```js
 import React, {useContext, useRef, useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
@@ -46,7 +56,7 @@ export function Modal({ onClose, children }) {
   }
 ```
 
-3. Make a `Modal.css` with:
+**3. Make a `Modal.css` with:**
 ```js
 #modal {
     position: fixed;
@@ -74,8 +84,17 @@ export function Modal({ onClose, children }) {
     border-radius: 24px;
   }
 ```
+*File Structure:*
+```
+src
+├── ...
+├── context
+│   ├── Modal.css
+│   └── Modal.js
+└── ...
+```
   
-4. In the root directory, in `index.js`: 
+**4. In the root directory, `src`, in `index.js`:**
 `import { ModalProvider } from './context/Modal';`
 And then wrap App component with it like this: 
 ```js
@@ -83,9 +102,22 @@ And then wrap App component with it like this:
         <App />
       </ModalProvider>
 ```
-### Creating the Actual Modal (using Login & Signup as examples)
-5. Create `LoginFormModal` folder and `SignupFormModal` both with  `index.js`'s inside. 
-6. Put this inside the Login one & change variables for the Signup: 
+-----
+
+## Creating the Actual Modal (using Login & Signup as examples)
+**5. Create `LoginFormModal` folder and `SignupFormModal` both with  `index.js`'s inside.**
+```
+src
+├── components
+│   ├── ...
+│   ├── LoginFormModal
+│   │   └── index.js
+│   ├── SignupFormModal
+│   │   └── index.js
+│   └── ...
+└── ...
+```
+**6. Put this inside the Login one & change variables for the Signup:** 
 ```js
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
@@ -110,4 +142,30 @@ export default LoginFormModal;
 ```
 *(remember to do the same for the SignupFormModal or any other kind of modal you want, but change the variables!)*
 
-7. *(Optional)* Add the setShowModal(false) to your submit buttons inside the forms if they don't redirect you to a new page or something.
+**7. *(Optional)* Add the setShowModal(false) to your submit buttons inside the forms if they don't redirect you to a new page or something.**
+**8. Put the modal component where you need the button that opens the modal to be. For example:**
+This is in my NavBar component, in `NavBar.js` or could be named `index.js` in yours.
+```
+src
+├── components
+│   ├── ...
+│   ├── NavBar
+│   │   └── NavBar.css
+│   │   └── NavBar.js
+│   └── ...
+└── ...
+```
+```
+<ul className='nav-right-side'>
+    {!user ?
+    <>
+        // code removed for brevity
+        <li>
+          <LoginFormModal />
+        </li>
+        <li>
+          <SignupFormModal />
+        </li>
+    </>
+    :
+    // code removed for brevity

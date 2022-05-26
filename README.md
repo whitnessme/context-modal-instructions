@@ -1,6 +1,8 @@
-# How to make Modals Using React Context
+# How to make Easy Modals Using React Context!
 
-> More concise instructions, based on aA Open's *Week 15 > Redux and authentication > Start Authenticate Me Part 2 Frontend bonus instructions*
+![Modal examples](https://miro.medium.com/max/1400/1*VCl3Dz_jwsKOXUjLeD19VA.png)
+
+> This README is refactored & boiled down instructions based on aA Open's *Week 15 > Redux and authentication > Start Authenticate Me Part 2 Frontend bonus instructions!* It details making a modal specifically for Login and Signup--but you can just change the names for directories & variables to make any modal. 
 
 ----
 
@@ -105,7 +107,7 @@ And then wrap App component with it like this:
 -----
 
 ## Creating the Actual Modal (using Login & Signup as examples)
-**5. Create `LoginFormModal` folder and `SignupFormModal` both with  `index.js`'s inside.**
+**5. Create `LoginFormModal` and `SignupFormModal` directories both with  `index.js`'s inside.**
 ```
 src
 ├── components
@@ -117,7 +119,7 @@ src
 │   └── ...
 └── ...
 ```
-**6. Put this inside the Login one & change variables for the Signup:** 
+**6. Put this code inside each `index.js` & for Signup, change variable names:** 
 ```js
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
@@ -140,10 +142,9 @@ function LoginFormModal() {
 
 export default LoginFormModal;
 ```
-*(remember to do the same for the SignupFormModal or any other kind of modal you want, but change the variables!)*
+*(remember to do the same for **any modal** you want, but change the variables!)*
 
-**7. *(Optional)* Add the setShowModal(false) to your submit buttons inside the forms if they don't redirect you to a new page or something.**
-**8. Put the modal component where you need the button that opens the modal to be. For example:**
+**7. Put the modal component where you need the button that opens the modal to be. For example:**
 This is in my NavBar component, in `NavBar.js` or could be named `index.js` in yours.
 ```
 src
@@ -169,3 +170,7 @@ src
     </>
     :
     // code removed for brevity
+```
+**8. *(Optional)* Add the setShowModal(false) to your onSubmit functions, inside the forms, if they don't redirect you to a new page or something.**
+
+[Back to top ⬆]()

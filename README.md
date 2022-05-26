@@ -156,7 +156,7 @@ src
 │   └── ...
 └── ...
 ```
-```
+```js
 <ul className='nav-right-side'>
     {!user ?
     <>
